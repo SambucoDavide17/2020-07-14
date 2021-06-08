@@ -28,6 +28,17 @@ public class Model {
 		//Vertici
 		dao.listAllTeams(teamsMap);
 		Graphs.addAllVertices(grafo, teamsMap.values());
+		
+		for(Team t: teamsMap.values()) {
+			for(Integer i: dao.risultatoSquadra(t)) {
+				int classifica = 0;
+				if(i == 0)
+					classifica += 1;
+				if(i == 1)
+					classifica += 3;
+			}
+			
+		}
 	}
 	
 	
